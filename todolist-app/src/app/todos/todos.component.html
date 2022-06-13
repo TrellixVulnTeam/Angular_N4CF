@@ -1,0 +1,43 @@
+<div *ngIf="!loading">
+    <div class="filter">
+        <input
+        id="filter-box"
+        type="text"
+        placeholder="Enter the string or substring of title"
+        [(ngModel)]="filters"
+        >
+    </div>
+    <hr>
+    <table id="table1" *ngIf="todosService.tasks.length; else noTasks">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Task</th>
+                <th>Date</th>
+                <th>State</th>
+                <th>X</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let task of todosService.tasks | todosFilter:filters; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td [class.done]="task.completed">{{task.title}}</td>
+                <!--css change through [class.done]-->
+                <td [class.done]="task.completed">{{task.date}}</td>
+                <td><input type="checkbox" [checked]="task.completed" (change)="onChange(task.id)"></td>
+                <td><button (click)="delTask(task.id)">&times;</button></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <ng-template #noTasks>
+        <h3 style="color: red">No tasks planned</h3>
+    </ng-template>
+</div>
+
+
+
+<div *ngIf="loading">
+    <h3 style="color:navy">loading...</h3>
+</div>

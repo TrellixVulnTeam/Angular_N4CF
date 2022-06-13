@@ -1,0 +1,28 @@
+#table1 {
+    width: 100%;
+
+}
+
+th { 
+    border-bottom: 1px solid silver;
+    color: navy;
+}
+
+td {
+    color: gray;
+
+}
+
+td, th {
+    padding: 3px;
+    font: 12pt 'Consolas';
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+#filter-box {
+    width: 400px;
+    padding: 5px;
+}

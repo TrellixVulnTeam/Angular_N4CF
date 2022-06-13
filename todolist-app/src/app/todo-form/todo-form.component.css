@@ -1,0 +1,18 @@
+#add-task-form {
+    border: 1px solid silver;
+    border-radius: 15px;
+    padding: 20px;
+    width: 400px;
+    margin: 20px auto;
+}
+
+#add-task-field {
+    width: 80%;
+    padding: 5px;
+}
+
+#add-task-button {
+    width: 50%;
+    margin-top: 15px;
+    padding: 3px;
+}
